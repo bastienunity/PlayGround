@@ -35,3 +35,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Logs/
+
+# Auto formatting tool
+*.preformat.bak
+*.preformat.bak.meta
+.format

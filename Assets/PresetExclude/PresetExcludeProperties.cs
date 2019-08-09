@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Presets;
@@ -31,19 +31,19 @@ public class PresetExcludeProperties : ScriptableObject, ISerializationCallbackR
         {
             // progress into the exclude list until we match current property or are placed after
             while (excludedIndex < excludedProperties.Count &&
-                modification.CompareTo(excludedProperties[excludedIndex]) >= 0 &&
-                !modification.StartsWith(excludedProperties[excludedIndex]))
+                   modification.CompareTo(excludedProperties[excludedIndex]) >= 0 &&
+                   !modification.StartsWith(excludedProperties[excludedIndex]))
             {
                 excludedIndex++;
             }
             // if we are not starting with the current exclusion name, then add the property to the list to apply to
-            if (excludedIndex >= excludedProperties.Count || 
+            if (excludedIndex >= excludedProperties.Count ||
                 !modification.StartsWith(excludedProperties[excludedIndex]))
                 properties.Add(modification);
         }
 
         // Only process with the apply to if there is at least one property to apply and we are not in check only.
-        if(properties.Count > 0)
+        if (properties.Count > 0)
             return checkOnly || preset.ApplyTo(target, properties.ToArray());
         return false;
     }

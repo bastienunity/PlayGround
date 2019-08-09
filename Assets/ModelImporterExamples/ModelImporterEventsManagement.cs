@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public static class ModelImporterEventsManagement
     /// This method is taking each events array of each clip animation from the current ModelImporter
     /// and copy it to every selected fbx file.
     /// In order to use it, you have to lock the Inspector with the FBX you want to read the events from,
-    /// select any FBX you want to paste this values to, and then use this method. 
+    /// select any FBX you want to paste this values to, and then use this method.
     /// </summary>
     /// <param name="command"></param>
     [MenuItem("CONTEXT/FBXImporter/Replicate animation events to selection")]
