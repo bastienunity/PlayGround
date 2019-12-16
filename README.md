@@ -25,3 +25,8 @@ The last method is dealing with Default Presets in the PresetManager and showcas
 This one is a bit tricky, we got a bug with references to Mesh from 2018.3 to 2019.1 that break a lot of references.
 While it is now fixed in 2019.2.2f1 and newest, users who didn't notice the bug and continued using 2019.1 with those broken Ids cannot update to 2019.2.2f1 and newest versions of Unity.
 Upgrading your project to 2019.2.f1 or newest, performing a full re-import and then running this script will probably solve your Mesh references problems.
+
+### DependencyImport
+This script is showing a very complicated way to have an asset that import things based on other assets.
+While we could only use a very simple ScriptableObject that have a list of other ScriptableObject and save it as a .asset to have Unity serialize it correctly, doing so this way, allow us to do some specific actions on linked assets.
+For example it could be used to automatically generate atlases from Texture2D assets with you own ScriptedImporter.
