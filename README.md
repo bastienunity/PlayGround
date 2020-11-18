@@ -30,3 +30,9 @@ Upgrading your project to 2019.2.f1 or newest, performing a full re-import and t
 This script is showing a very complicated way to have an asset that import things based on other assets.
 While we could only use a very simple ScriptableObject that have a list of other ScriptableObject and save it as a .asset to have Unity serialize it correctly, doing so this way, allow us to do some specific actions on linked assets.
 For example it could be used to automatically generate atlases from Texture2D assets with you own ScriptedImporter.
+
+### PresetsPerFolder
+This is a demonstration of how AssetDatabase V2 and its dependencies system can be used to enforce assets settings with Presets based upon a folder's organisation.
+The script registers dependencies to every asset in the project, based upon their Path and the Presets that apply to them.
+When a Preset is added, moved, or removed, everything in the corresponding subfolder is re-imported using the new Preset values.
+When a Preset value is changed, any asset that used the Preset during import will be re-imported using its new values.
